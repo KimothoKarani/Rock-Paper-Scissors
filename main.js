@@ -5,12 +5,20 @@ const possibleChoices = document.querySelectorAll('button')
 let userChoice
 let computerChoice
 let result
+const div = document.createElement('div');
+
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click' , (e) => {
     userChoice = e.target.id
     userChoiceDisplay.innerHTML = userChoice
     generateComputerChoice()
     getResult()
+    e.target.style.backgroundColor = 'red'
+    e.target.style.color = 'white'
+    e.target.style.border = 'none'
+    e.target.style.fontSize = '1.5rem'
+    e.target.style.fontWeight = 'bold'
+
 }))
 
 function generateComputerChoice() {
